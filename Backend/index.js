@@ -14,6 +14,7 @@ const adminRoutes = require("./Routes/admin.route");
 const userRoutes = require("./Routes/user.route");
 const agentRoutes = require("./Routes/agent.route");
 const kycRoutes = require("./Routes/kyc.route");
+const notificationRoutes = require("./Routes/notification.route");
 
 const PORT = appConfig.port;
 app.use(
@@ -33,6 +34,7 @@ app.use("/api/admin", adminRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/agent", agentRoutes);
 app.use("/api/kyc", kycRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 app.use((req, res, next) => {
   next(new AppError(`Route not found: ${req.originalUrl}`, 404));
